@@ -24,7 +24,7 @@ task :aggregate, :compress do |t, args|
 
   compressor = YUI::JavaScriptCompressor.new(:munge => true) if args[:compress]
 
-  files = core.map{ |name| "core/#{name}.js" } + dirs.map{ |dir| Dir["#{dir}/**/*.js"] }.flatten
+  files = core.map{ |name| "core/#{name}.js" } + dirs.map{ |dir| Dir["#{dir}/**/*.js"].reject{ |x| x.include? 'jquery' } }.flatten
   files.uniq!
 
   action = args[:compress] ? "Compressing" : "Aggregating"

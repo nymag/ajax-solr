@@ -232,3 +232,7 @@ AjaxSolr.extend = function () {
   }
   return target;
 };
+
+if (typeof define === 'function') {
+    define('AjaxSolr', [], function() { return AjaxSolr; });
+}
