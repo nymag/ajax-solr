@@ -12,7 +12,8 @@ task :aggregate, :compress do |t, args|
     'ParameterStore',
     'Parameter',
     'AbstractWidget',
-    'AbstractFacetWidget'
+    'AbstractFacetWidget',
+    'Exports'
   ]
 
   dirs = [
